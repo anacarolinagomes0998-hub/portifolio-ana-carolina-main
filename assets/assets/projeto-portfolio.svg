@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 140" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Imagem provisória do projeto">
+  <defs>
+    <pattern id="xadrez" width="24" height="24" patternUnits="userSpaceOnUse">
+      <rect width="24" height="24" fill="#eef6f4"/>
+      <rect width="12" height="12" fill="#d9ebe5"/>
+      <rect x="12" y="12" width="12" height="12" fill="#d9ebe5"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="140" fill="url(#xadrez)"/>
+  <text x="200" y="76" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#4f6a66">Meu portfólio</text>
+</svg>
