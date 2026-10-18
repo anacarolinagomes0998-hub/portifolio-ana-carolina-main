@@ -1,12 +1,12 @@
 :root {
-  --ink: #12302e;
-  --muted: #526567;
-  --accent: #1d7a67;
-  --accent-blue: #2b6fa8;
-  --accent-soft: #e0f0ea;
-  --line: #cbdcd8;
-  --glass: rgba(255, 255, 255, 0.78);
-  --shadow: 31, 122, 107;
+  --ink: #eaf6f3;
+  --muted: #a9c3c4;
+  --accent: #6fe0c0;
+  --accent-blue: #7fc0f5;
+  --accent-soft: rgba(111, 224, 192, 0.14);
+  --line: rgba(255, 255, 255, 0.16);
+  --glass: rgba(255, 255, 255, 0.08);
+  --shadow: 0, 0, 0;
 }
 
 * {
@@ -26,20 +26,17 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #f1f6f5;
+  background-color: #07131f;
   /* Camadas, de cima para baixo:
-     1) véu claro para o texto continuar legível
-     2) mapa-múndi, misturado com a camada de baixo
-     3) degradê azul e verde que dá a cor ao mapa */
+     1) contorno do mapa-múndi (PNG com fundo transparente)
+     2) degradê azul e verde */
   background-image:
-    linear-gradient(rgba(241, 246, 245, 0.35), rgba(241, 246, 245, 0.35)),
-    url("assets/mundi.jpeg"),
-    linear-gradient(135deg, #7fb8e6 0%, #9bd6c0 50%, #8fcfa5 100%);
-  background-size: cover, cover, cover;
+    url("assets/mundi.png"),
+    linear-gradient(135deg, #07131f 0%, #0b2a38 50%, #0c3a36 100%);
+  background-size: cover, cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-blend-mode: normal, multiply, normal;
 }
 
 a {
@@ -64,7 +61,7 @@ main {
   color: var(--accent);
 }
 
-/* ---------- Página inicial ---------- */ 
+/* ---------- Página inicial ---------- */
 .hero {
   display: flex;
   flex-direction: column;
@@ -74,11 +71,11 @@ main {
   margin: 0 auto;
   padding: 36px 28px 32px;
   border-radius: 28px;
-  border: 1px solid rgba(255, 255, 255, 0.65);
-  background: linear-gradient(160deg, rgba(255, 255, 255, 0.55), rgba(240, 248, 246, 0.22));
-  box-shadow: 0 20px 50px rgba(var(--shadow), 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.04));
+  box-shadow: 0 20px 50px rgba(var(--shadow), 0.45);
   -webkit-backdrop-filter: blur(14px);
-  blackdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
 }
 
 .hero__foto {
@@ -87,7 +84,7 @@ main {
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid #fff;
-  box-shadow: 0 6px 22px rgba(var(--shadow), 0.32);
+  box-shadow: 0 6px 22px rgba(var(--shadow), 0.5);
   background: var(--accent-soft);
   margin-bottom: 22px;
 }
@@ -136,9 +133,9 @@ main {
 
 .btn:hover,
 .btn:focus-visible {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.16);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(var(--shadow), 0.18);
+  box-shadow: 0 8px 20px rgba(var(--shadow), 0.35);
 }
 
 .social {
@@ -162,15 +159,16 @@ main {
   transition: transform 0.18s;
 }
 
+.social svg {
+  width: 17px;
+  height: 17px;
+  fill: currentColor;
+}
+
 .social a:hover,
 .social a:focus-visible {
-  .social svg {
-    width: 17px;
-    height: 17px;
-    fill: currentColor;
-  }
   transform: translateY(-2px);
-  background: #fff;
+  background: rgba(255, 255, 255, 0.16);
 }
 
 /* ---------- Páginas internas ---------- */
@@ -191,7 +189,7 @@ main {
 
 .voltar:hover,
 .voltar:focus-visible {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.16);
 }
 
 .mini-perfil {
@@ -209,7 +207,7 @@ main {
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid #fff;
-  box-shadow: 0 4px 16px rgba(var(--shadow), 0.3);
+  box-shadow: 0 4px 16px rgba(var(--shadow), 0.5);
   background: var(--accent-soft);
   margin-bottom: 8px;
 }
@@ -250,11 +248,11 @@ main {
   border-radius: 18px;
   border: 1px solid var(--line);
   background: var(--glass);
-  box-shadow: 0 12px 34px rgba(var(--shadow), 0.12);
+  box-shadow: 0 12px 34px rgba(var(--shadow), 0.35);
 }
 
 .sobre p {
-  color: #3d5254;
+  color: #c3d6d6;
 }
 
 .sobre p + p {
@@ -276,14 +274,14 @@ main {
   overflow: hidden;
   border-radius: 18px;
   border: 1px solid var(--line);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(240, 248, 246, 0.88));
-  box-shadow: 0 12px 34px rgba(var(--shadow), 0.14);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.04));
+  box-shadow: 0 12px 34px rgba(var(--shadow), 0.35);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 18px 40px rgba(var(--shadow), 0.22);
+  box-shadow: 0 18px 40px rgba(var(--shadow), 0.5);
 }
 
 .card__imagem {
@@ -364,8 +362,8 @@ main {
   padding: 16px 18px;
   border-radius: 14px;
   border: 1px solid var(--line);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(240, 248, 246, 0.88));
-  box-shadow: 0 8px 24px rgba(var(--shadow), 0.09);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.04));
+  box-shadow: 0 8px 24px rgba(var(--shadow), 0.3);
 }
 
 .item__icone {
